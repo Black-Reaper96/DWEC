@@ -23,22 +23,32 @@
                     }
             }
             document.write("La cadena tiene "+contador+" letras a<br>");
+            document.write("<p style='color:green;'>");
             for(i=0;i<=texto.length;i++){
+                
                 if(array1[i]!=","){
                     var texto1=array1[i];
                     document.write(texto1); 
                 }else{
                     document.write("<br><br>");
                 }  
-                               
+                            
+            }
+            document.write("</p>");  
+            document.write("<br><br>");
+            var termino="hidalgo";
+            var posicion=texto.indexOf(termino);
+            if(posicion!==-1){
+                document.write("La palabra hidalgo esta en la posicion "+posicion);
+            }else{
+                document.write("No encontre nada");
             }
             document.write("<br><br>");
             var mayusculas=texto.toLocaleUpperCase();
-            document.write(mayusculas);
+            document.write("<p style='color:blue;'>"+mayusculas+"</p>");
             document.write("<br><br>");
             var minusculas=texto.toLocaleLowerCase();
-            document.write(minusculas);
-            document.write("<br><br>");
+            document.write("<p style='color:red;'>"+minusculas+"</p>");
             document.write("<a href='http://www.cipsa.es'>"+"Seeway"+"</a>");
         </script>
     </body>

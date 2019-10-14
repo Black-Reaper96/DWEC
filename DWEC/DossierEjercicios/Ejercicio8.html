@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var usuarios=["Antonio","Juan","Jorge","Javier"];
+            var contras=["1234","4321","5678","8765"];
+            var usuario=prompt("¿Cual es tu usuario?:");
+            var contraseña=prompt("¿Cual es tu contraseña?:");
+            var valor1=false;
+            var valor2=false;
+
+            function compUsuarios(usu){
+                for(i=0;i<=usuarios.length;i++){
+                    if(usuarios[i]==usu){
+                        return true;
+                    }
+                }
+            }
+
+            function compContras(con){
+                for(i=0;i<=contras.length;i++){
+                    if(contras[i]==con){
+                        return true;
+                    }
+                }
+            }
+            valor1=compUsuarios(usuario);
+            valor2=compContras(contraseña);
+
+            if(valor1==true&&valor2==true){
+                document.write("Bienvenido usuario");
+            }else{
+                document.write("Usuario y/o contraseña incorrectos");
+            }
+        </script>
+    </body>
+</html>

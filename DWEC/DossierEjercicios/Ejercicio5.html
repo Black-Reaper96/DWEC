@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var importeTexto=prompt("¿Cual es el importe de su compra(€)?:");
+            var dineroTexto=prompt("¿Cuanto dinero paga(€)?:");
+            var importe=parseInt(importeTexto);
+            var dinero=parseInt(dineroTexto);
+            var diferencia=dinero-importe;
+            var bill50=0;
+            var bill20=0;
+            var bill10=0;
+            var bill5=0;
+            var Resto=0;
+            while(diferencia>0){
+                if(diferencia>=50){
+                    diferencia=diferencia-50;
+                    bill50=bill50+1;
+                }else if(diferencia>=20){
+                    diferencia=diferencia-20;
+                    bill20=bill20+1;
+                }else if(diferencia>=10){
+                    diferencia=diferencia-10;
+                    bill10=bill10+1;
+                }else{
+                    diferencia=diferencia-5;
+                    bill5=bill5+1;
+                    Resto=diferencia;
+                    diferencia=0;
+                }
+            }
+            //document.write("hola");
+            alert("Tienes que devolver "+bill50+" de 50, "+bill20+" de 20, "+bill10+" de 10, "+bill5+" y sobran "+Resto+"€.");
+        </script>
+        
+    </body>
+</html>

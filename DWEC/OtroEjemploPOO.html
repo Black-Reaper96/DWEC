@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+            function person(first,last,age,eyecolor){
+                this.firstName=first;
+                this.lastName=last;
+                this.age=age;
+                this.eyecolor=eyecolor;
+            }
+        </script>
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var MyFather=new person("John","Doe",58,"blue");    
+            var MyMother=new person("Sally","Rally",48,"green"); 
+            MyMother.haircolor="blonde";
+            person.prototype.nacionality="Spanish";
+        </script>
+    </body>
+</html>

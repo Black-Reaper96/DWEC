@@ -4,12 +4,33 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+            class producto{
+                constructor(nombre,id,pvp){
+                    this.nombre=nombre;
+                    this.id=id;
+                    this.pvp=pvp;
+                }
+                  
+                mostrardatos(){
+                    return this.id+" "+this.nombre+" "+this.pvp;
+                }
+
+            }
+            
+            
+        
+        </script>
         <title>Document</title>
     </head>
     <body>
         <script>
-                
-            
+            var producto1=new producto("yogures","01","2.75");
+            document.write(producto1.mostrardatos());
+            var producto2=new producto("natillas","02","2.75");
+            document.write(producto2.mostrardatos());
+            var producto3=new producto("chocolate","03","2.75");
+            document.write(producto3.mostrardatos());
             
         </script>
     </body>

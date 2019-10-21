@@ -1,5 +1,0 @@
-{
-"nombre" : "Albert",
-"edad" : 25,
-"email" : "albert@dominio.net"
-}

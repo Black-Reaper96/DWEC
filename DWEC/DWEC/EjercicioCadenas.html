@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var cadena=prompt();
+            var cadena2=cadena.replace(/ /g,'');
+            var ArrayCadena=new Array(cadena2.length);
+            var ArrayCadenaInvertida=new Array(cadena2.length);
+            var aux=new Array(cadena2.length)
+            var palindromo=false
+            //document.write(cadena.charAt(2));
+            
+            for(i=0;i<cadena2.length;i++){
+               
+                ArrayCadena[i]=cadena2.charAt(i);
+                aux[i]=cadena2.charAt(i)
+                
+            };
+            
+            
+            ArrayCadenaInvertida=ArrayCadena.reverse();
+
+            for(i=0;i<ArrayCadena.length;i++){
+               //document.write(aux[i]);
+               
+               //document.write(ArrayCadenaInvertida[i]);
+            };
+
+            for(i=0;i<ArrayCadena.length;i++){
+                if(aux[i]==ArrayCadenaInvertida[i]){
+                    palindromo=true;
+                }else{
+                    palindromo=false;
+                    document.write("error en la letra de la posicion "+i+". Las letras "+aux[i]+" y "+ArrayCadenaInvertida[i]+" no son iguales.");
+                    document.write("<br>");
+                }
+            };
+            
+            if (palindromo===true){
+                document.write("Es un palindromo");
+            }else{
+                document.write("No es un palindromo");
+            }
+
+        </script>
+    </body>
+</html>

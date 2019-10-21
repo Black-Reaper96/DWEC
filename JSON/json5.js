@@ -3,3 +3,5 @@ var car='{"make":"Honda Civic","year":2006,"price":18000,"owner":{"name":"Henry 
 var carJSON=JSON.parse(car);
 
 console.log(carJSON.owner.address.street);
+
+document.write(carJSON.owner.address.street);

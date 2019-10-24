@@ -62,13 +62,17 @@
         <title>Document</title>
     </head>
     <body>
-        
-            <input type="radio" name="vehiculo" value="Avion"> Avion<br>
-            <input type="radio" name="vehiculo" value="Coche"> Coche<br>
-            <input type="radio" name="vehiculo" value="Barco"> Barco<br>
+        <form name="formulario">
 
-            <button id="btn1" onclick="pasoParametro(document.getElementsByName('vehiculo'))">Click aquí</button>
-       
+            <input type="Radio" name="vehiculo" value="Coche" >Coche
+    
+            <br>
+            <input type="Radio" name="vehiculo" value="Avion" >Avion
+            <br>
+            <input type="Radio" name="vehiculo" value="Barco" >Barco
+            <br>
+            <input type="Button" name="boton" value="Mostrar" onclick="pasoParametro(document.formulario.vehiculo)">
+        </form>
         <div id="artistlist"></div>
     </body>
 </html>

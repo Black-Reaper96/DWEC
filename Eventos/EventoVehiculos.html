@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+            function displayVehicles() {
+            
+            // Our JSON data
+            var data = 
+                {
+                "vehiculos" : [
+                    {
+                    "tipo" : "Avion",
+                    "medio" : "aire",
+                    "veloc_punta" : 300 ,
+                    "capacidad" : 500,
+                    },
+                    {
+                    "tipo" : "Coche",
+                    "medio" : "tierra",
+                    "veloc_punta" : 250 ,
+                    "capacidad" : 5,
+                    },
+                    {
+                    "tipo" : "Barco",
+                    "medio" : "agua",
+                    "veloc_punta" : 100 ,
+                    "capacidad" : 10000,
+                    },
+                ]
+                }
+                
+                // Put the data into a variable and format with HTML tags
+                var output = "<h1>Vehiculos</h1>";
+                
+                // Loop through the artists
+                for (var i in data.vehiculos) {
+                    output += "<h2>" + data.vehiculos[i].tipo + "</h2>"; 
+                    output += "<ul> Medio:"+data.vehiculos[i].medio + "</ul>";
+                    output += "<ul> Velocidad punta:"+data.vehiculos[i].veloc_punta + "</ul>";
+                    output += "<ul> Capacidad:"+data.vehiculos[i].capacidad + "</ul>";
+                }
+            
+                // Output the data to the "artistlist" element
+                document.getElementById("artistlist").innerHTML=output;
+            }   
+            
+            function pasoParametro(){
+                let dato=document.getElementsByName("vehiculo").value;
+                document.write(dato);
+            }
+
+        </script>
+        <title>Document</title>
+    </head>
+    <body>
+        <form>
+            <input type="radio" name="vehiculo" value="Avion"> Avion<br>
+            <input type="radio" name="vehiculo" value="Coche"> Coche<br>
+            <input type="radio" name="vehiculo" value="Barco"> Barco<br>
+
+            <button id="btn1">Click aquí</button>
+        </form>
+        <div id="artistlist"></div>
+        <script>
+                document.getElementById("btn1").addEventListener('click', pasoParametro);
+        </script>
+    </body>
+</html>

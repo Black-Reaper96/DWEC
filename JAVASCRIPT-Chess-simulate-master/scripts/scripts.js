@@ -70,7 +70,7 @@ function startGame(){
 	var posiblePosition = null;
 	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))-2)]+(parseInt(positionInitial.substring(1,2))-1));
 	/*
-		Introducimos todo en condiciones porque puede haver celdas que no existan y 
+		Introducimos todo en condiciones porque puede haber celdas que no existan y 
 		el código se pararía
 	*/
 	if(posiblePosition != null){

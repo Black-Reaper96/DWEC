@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var todos = document.getElementsByTagName("li");//coge todos los elementos que tengan una etiqueta de lista(li) y los almacena.
+            var liClaseA=[];//declara un array vacio.
+            for (var i=0 ,tam=todos.length; i<tam; i++ ){//declara un bucle for desde cero hasta el numero de elementos almacenados en la variable todos.
+                if(todos[i].className=="a"){//solo afecta a los elementos que tengan su nombre de classe igual a una 'a'.
+                    liClaseA.push(todos[i]);//Ylos almacena en el array vacio.
+                }
+            }
+            $("li.a");//Iniciamos el programa
+        </script>
+    </body>
+</html>

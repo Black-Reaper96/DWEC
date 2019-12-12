@@ -1,10 +1,10 @@
-var positionInitial;
-var positionLetter = ["A", "B", "C", "D", "E", "F", "G", "H"];
+var posionInitial;
+var posionLetter = ["A", "B", "C", "D", "E", "F", "G", "H"];
 window.onload=function () {
 	do{
-		positionInitial = prompt("Introduce las cordenadas");
-		positionInitial = positionInitial.toUpperCase();	
-	}while(positionInitial.length!=2)		
+		posicionInitial = prompt("Introduce las cordenadas");
+		posicionInitial = posicionInitial.toUpperCase();	
+	}while(posicionInitial.length!=2)		
 	//Creamos el tablero
 	crearTablero();
 	//Empezamos el juego	
@@ -36,7 +36,7 @@ function crearTablero(){
 				}				
 			}
 			newDiv.style.display = 'inline-block';			
-			newDiv.setAttribute("id", positionLetter[i]+x);	
+			newDiv.setAttribute("id", posicionLetter[i]+x);	
 			bodyHTML.appendChild(newDiv);		
 		}
 		linebreak = document.createElement("br");
@@ -49,7 +49,7 @@ function startGame(){
 		Inlcuimos la imagen del caballo de una variable
 	*/
 	horsePiece = "<img id=caballo class=dropable src=images/caballo.png />";
-	document.getElementById(positionInitial).innerHTML = horsePiece;
+	document.getElementById(posicionInitial).innerHTML = horsePiece;
 	/*
 		Inlcuimos en la pieza del ajedrez el atributo dragable, para que pueda ser seleccionado
 	*/
@@ -67,57 +67,57 @@ function startGame(){
 		*-De la posicion inicial buscamos el segundo digito y le restamos los valores que toquen
 		para poder dejar la ficha en ellos (-2, -1, +1, +2).
 	*/
-	var posiblePosition = null;
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))-2)]+(parseInt(positionInitial.substring(1,2))-1));
+	var posiblePosiion = null;
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))-2)]+(parseInt(posicionInitial.substring(1,2))-1));
 	/*
 		Introducimos todo en condiciones porque puede haber celdas que no existan y 
 		el código se pararía
 	*/
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 	
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))-1)]+(parseInt(positionInitial.substring(1,2))-2));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))-1)]+(parseInt(posicionInitial.substring(1,2))-2));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 	
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))-2)]+(parseInt(positionInitial.substring(1,2))+1));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))-2)]+(parseInt(posicionInitial.substring(1,2))+1));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 	
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))-1)]+(parseInt(positionInitial.substring(1,2))+2));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))-1)]+(parseInt(posicionInitial.substring(1,2))+2));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 	
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))+1)]+(parseInt(positionInitial.substring(1,2))-2));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))+1)]+(parseInt(posicionInitial.substring(1,2))-2));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 	
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))+1)]+(parseInt(positionInitial.substring(1,2))+2));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))+1)]+(parseInt(posicionInitial.substring(1,2))+2));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))+2)]+(parseInt(positionInitial.substring(1,2))-1));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))+2)]+(parseInt(posicionInitial.substring(1,2))-1));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);
 	}
 	
-	posiblePosition = document.getElementById(positionLetter[(positionLetter.indexOf(positionInitial.substring(0,1))+2)]+(parseInt(positionInitial.substring(1,2))+1));
-	if(posiblePosition != null){
-		posiblePosition.addEventListener("drop", suelta);
-		posiblePosition.addEventListener("dragover", allowDrop);		
+	posiblePosiion = document.getElementById(posicionLetter[(posicionLetter.indexOf(posicionInitial.substring(0,1))+2)]+(parseInt(posicionInitial.substring(1,2))+1));
+	if(posiblePosicion != null){
+		posiblePosicion.addEventListener("drop", suelta);
+		posiblePosicion.addEventListener("dragover", allowDrop);		
 	}
 }
 
@@ -140,7 +140,7 @@ function suelta(event){
 		actual , donde se encuentra el cavallo como la posición inicial y llamamos 
 		a la funcion startGame()
 	*/
-	positionInitial = this.getAttribute("id");
+	posiionInitial = this.getAttribute("id");
 	/*
 	El siguiente paso es quitar el listener de drag a los posicones posibles de aqntes, de 
 	no ser así se sumarían las posiciones anteriores con las nuevas y con el paso del tiempo

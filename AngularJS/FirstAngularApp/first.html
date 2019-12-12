@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html  ng-app="primeraApp">
+<head>
+    <title>Mi primer script de AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="first.js"></script>
+</head>
+<body ng-controller="primerController">
+<div>
+    <span>Nombre:</span>
+    <input type="text" ng-model="first">
+    <input type="text" ng-model="last">
+    <button ng-click="updateMessage()">Mensaje</button>
+    <hr>
+    {{heading + message}}
+</div>
+
+</body>
+</html>

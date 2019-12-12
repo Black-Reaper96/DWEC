@@ -9,6 +9,11 @@
     <body>
         <section id="app">
             <h1>{{titulo}}</h1>
+            <ul>
+                <li v-for="fruta of frutas">{{fruta.nombre}} - {{fruta.cantidad}}
+                    <span v-if="fruta.cantidad===0"> - Sin Stock</span>
+                </li>
+            </ul>
 
         </section>
 

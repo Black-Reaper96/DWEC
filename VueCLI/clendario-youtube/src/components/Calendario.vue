@@ -3,6 +3,9 @@
     <v-col>
       <v-sheet height="64">
         <v-toolbar flat color="white">
+          <v-btn outlined class="mr-4" dark color="info" @click="dialog = true">
+            Agregar
+          </v-btn>
           <v-btn outlined class="mr-4" color="grey darken-2" @click="setToday">
             Today
           </v-btn>
@@ -56,6 +59,21 @@
           @click:date="viewDay"
           @change="updateRange"
         ></v-calendar>
+
+        <v-dialog v-model="dialog">
+          <v-card>
+            <v-container>
+              <v-form @submit.prevent="addEvent">
+                <v-text-field type="text" label="Agregar Nombre" v-model="name"></v-text-field>
+                <v-text-field type="text" label="Agregar Detalle" v-model="details"></v-text-field>
+                <v-text-field type="date" label="Agregar Fecha de Inicio" v-model="start"></v-text-field>
+                <v-text-field type="date" label="Agregar Fecha de Fin" v-model="end"></v-text-field>
+                <v-text-field type="color" label="Color del Evento" v-model="color"></v-text-field>
+              </v-form>
+            </v-container>
+          </v-card>
+        </v-dialog>
+
         <v-menu
           v-model="selectedOpen"
           :close-on-content-click="false"
@@ -104,12 +122,11 @@
 
 <script>
 
-import {db} from '../main';
+import { db } from '../main'
 
   export default {
     data: () => ({
-      today: new Date().toISOString().substring(0,10),
-      focus: new Date().toISOString().substring(0,10),
+      focus: '',
       type: 'month',
       typeToLabel: {
         month: 'Month',
@@ -122,12 +139,14 @@ import {db} from '../main';
       selectedEvent: {},
       selectedElement: null,
       selectedOpen: false,
-      events: [],
-      name: null,
       details: null,
-      color: 'info',
       dialog: false,
-      currentlyEditing: null
+      currentliEditing: null,
+      color: null,
+      name: null,
+      events: [],
+      colors: [],
+      names: [],
     }),
     computed: {
       title () {
@@ -166,20 +185,30 @@ import {db} from '../main';
     },
     mounted () {
       this.$refs.calendar.checkChange();
-      this.getEvents()
+      
+    },
+    created(){
+      this.getEvents();
     },
     methods: {
       async getEvents(){
-          try {
-              const snapshot = await db.colection('eventos').get();
-              const events = [];
+        try{
+          const snapshot = await db.collection('eventos').get();
+          const events = [];
 
-              snapshot.forEach(doc => {
-                 console.log(doc.data()); 
-              })
-          } catch (error) {
-              console.log(error);
-          }
+          snapshot.forEach(doc =>{
+            //console.log(doc.id);
+            let eventoData = doc.data();
+            eventoData.id=doc.id;
+            events.push(eventoData);
+          })
+
+          this.events = events
+
+        }catch(error){
+          console.error(error);
+          
+        }
       },
       viewDay ({ date }) {
         this.focus = date
@@ -256,3 +285,4 @@ import {db} from '../main';
     },
   }
 </script>
+
